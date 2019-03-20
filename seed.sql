@@ -3,6 +3,9 @@ CREATE DATABASE jampack;
 
 \c jampack;
 
-CREATE TABLE user (
+CREATE TABLE users (
 id SERIAL PRIMARY KEY,
-)
+firstname VARCHAR NOT NULL,
+lastname VARCHAR NOT NULL,
+
+);
