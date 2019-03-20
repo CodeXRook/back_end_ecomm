@@ -9,5 +9,5 @@ firstname VARCHAR NOT NULL,
 lastname VARCHAR NOT NULL,
 address VARCHAR NOT NULL
 state_id INT REFERENCES city(id) NOT NULL,
-
+zipcode VARCHAR NOT NULL,
 );
