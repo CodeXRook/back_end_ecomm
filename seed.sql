@@ -35,4 +35,5 @@ CREATE TABLE orders(
 id SERIAL PRIMARY KEY,
 user_id SERIAL PRIMARY KEY,
 order_total VARCHAR NOT NULL,
+order_status VARCHAR NOT NULL,
 );
