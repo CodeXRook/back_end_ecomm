@@ -23,6 +23,7 @@ zipcode VARCHAR NOT NULL,
 
 CREATE TABLE products(
 id SERIAL PRIMARY KEY,
+store_id SERIAL PRIMARY KEY,
 name VARCHAR NOT NULL,
 price MONEY,
 description VARCHAR NOT NULL,
