@@ -30,3 +30,7 @@ description VARCHAR NOT NULL,
 category VARCHAR NOT NULL,
 url VARCHAR NOT NULL,
 );
+
+CREATE TABLE orders(
+id SERIAL PRIMARY KEY,
+);
