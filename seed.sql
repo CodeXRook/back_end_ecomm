@@ -4,10 +4,17 @@ CREATE DATABASE jampack;
 \c jampack;
 
 CREATE TABLE users (
-id SERIAL PRIMARY KEY,
-firstname VARCHAR NOT NULL,
-lastname VARCHAR NOT NULL,
-address VARCHAR NOT NULL
-state_id INT REFERENCES city(id) NOT NULL,
-zipcode VARCHAR NOT NULL,
+ id SERIAL PRIMARY KEY,
+ firstname VARCHAR NOT NULL,
+ lastname VARCHAR NOT NULL,
+ address VARCHAR NOT NULL,
+ state VARCHAR NOT NULL,
+ zipcode VARCHAR NOT NULL,
+);
+
+CREATE TABLE marketplace(
+id SERIAL PRIMARY KEY, 
+shopname VARCHAR NOT NULL,
+user_id SERIAL PRIMARY KEY,
+state VARCHAR NOT NULL,
 );
