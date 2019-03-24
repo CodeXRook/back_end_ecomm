@@ -6,7 +6,10 @@ const userService = require('../service/user');
 userRouter.post('/',(req, res, next) =>{
     const {id, firstname, lastname, address, state, zipcode} = req.body;
 
-    
+    userService.create(id, firstname, lastname, address, state, zipcode)
+    .then(data => {
+        res.json({})
+    })
 })
 
 
