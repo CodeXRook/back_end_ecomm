@@ -32,5 +32,7 @@ userRouter.get('/:firstname', (req, res, next) =>{
 userRouter.put('/:name',(req, res, next) => {
     const {state} = req.body;
     const {name} = req.params;
+
+    userService.update(firstname, lastname, state)
 })
 
