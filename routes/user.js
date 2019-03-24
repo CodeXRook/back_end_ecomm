@@ -16,8 +16,10 @@ userRouter.post('/',(req, res, next) =>{
 });
 
 // GET - READ
-    userRouter.get('/:firstname', (req, res, next) =>{
-        
+userRouter.get('/:firstname', (req, res, next) =>{
+        const {firstname} = req.params;
+
+
     })
 
 
