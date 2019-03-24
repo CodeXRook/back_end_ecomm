@@ -61,3 +61,4 @@ userRouter.get('/:id/orders', (req, res, next) => {
     
 })
 
+module.exports = userRouter;
