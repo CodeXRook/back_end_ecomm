@@ -13,6 +13,11 @@ userRouter.post('/',(req, res, next) =>{
     .catch(err => {
         next(err);
     })
-})
+});
+
+// GET - READ
+    userRouter.get('/:firstname', (req, res, next) =>{
+        
+    })
 
 

@@ -23,7 +23,7 @@ app.use(( err, req, res, next) => {
 
 
 //FORWARD SLASH PING OR ANY TYPE TO ACCESS EXACT LOCAL HOST FILE
-app.get('/ping',(req, res) => {
+app.get('/',(req, res) => {
     res.status(200);
     res.json({'Text Work':'🔥🔥🔥'});
 });
