@@ -1,6 +1,7 @@
 const bodyParser = require('body-parser');
 const express = require('express');
 const app = express();
+const port = 5055
 
 //FORWARD SLASH PING OR ANY TYPE TO ACCESS EXACT LOCAL HOST FILE
 app.get('/ping',(req, res) => {
@@ -8,7 +9,7 @@ app.get('/ping',(req, res) => {
     res.json({'Text Work':'🔥🔥🔥'});
 });
 
-const port = 5051
+const port = 5055
 app.listen(port,() =>{
     console.log(`Listening on port ${port}`);
 })
