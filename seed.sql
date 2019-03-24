@@ -51,4 +51,6 @@ INSERT INTO shops (user_id, shopname, category, address, state, city, zipcode) V
 (2,'Jewel Bug', 'jewelry', '216 flabush ave','New york','Manhattan', '10493');
 
 INSERT INTO products (id, name, shop_id, price, description, category, url) VALUES
-(50,'rocawear', 1, 65, 'pants', 'Clothing', 'wwww.rocawear.com');
+(50,'rocawear', 1, 65, 'pants', 'Clothing', 'wwww.rocawear.com'),
+(23,'jacab&co', 2, 650, 'gold chain', 'Jewelry', 'wwww.jewelbug.com'),
+(13,'jacab&co', 3, 1600, 'macbookpro', 'electronics', 'wwww.boxplug.com');
