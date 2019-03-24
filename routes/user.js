@@ -8,7 +8,7 @@ userRouter.post('/',(req, res, next) =>{
 
     userService.create(id, firstname, lastname, address, state, zipcode)
     .then(data => {
-        res.json({})
+        res.json({success: `User created ${firstname} ${lastname} ${address} ${state} ${zipcode}`})
     })
 })
 
