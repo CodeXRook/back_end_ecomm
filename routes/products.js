@@ -10,4 +10,12 @@ productRouter.post('/', (req, res, next) => {
     .then(data => {
         res.json({success: `Created Porduct named ${name} with generated ID: ${data.id}`});
     })
+    .catch(err => {
+        next(err);
+    })
+})
+
+// GET - READ
+productRouter.get('/:id/', (req, res, next)=> {
+    
 })
