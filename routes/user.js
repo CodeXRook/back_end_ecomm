@@ -43,7 +43,7 @@ userRouter.put('/:name',(req, res, next) => {
 })
 
 // DELETE- DELETE
-userRouter.delete('/:fistname', (req, res, next) => {
+userRouter.delete('/:id', (req, res, next) => {
     const {firstname} = req.params;
 
     userRouter.delete(name)
@@ -55,8 +55,9 @@ userRouter.delete('/:fistname', (req, res, next) => {
     })
 });
 
-userRouter.get('/:firstname/orders', (req, res, next) => {
-    const {firstname} = req.params;
-    const {orderhisory} = req.query;
+userRouter.get('/:id/orders', (req, res, next) => {
+    const {id} = req.params;
+  
+    
 })
 
