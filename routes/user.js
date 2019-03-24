@@ -53,5 +53,10 @@ userRouter.delete('/:fistname', (req, res, next) => {
     .catch(err => {
         next(err);
     })
+});
+
+userRouter.get('/:firstname/orders', (req, res, next) => {
+    const {firstname} = req.params;
+    const {orderhisory} = req.query;
 })
 
