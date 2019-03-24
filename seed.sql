@@ -54,3 +54,5 @@ INSERT INTO products (id, name, shop_id, price, description, category, url) VALU
 (50,'rocawear', 1, 65, 'pants', 'Clothing', 'wwww.rocawear.com'),
 (23,'jacab&co', 2, 650, 'gold chain', 'Jewelry', 'wwww.jewelbug.com'),
 (13,'jacab&co', 3, 1600, 'macbookpro', 'electronics', 'wwww.boxplug.com');
+
+INSERT INTO orders (id, user_id, order_total, order_status) VALUES
