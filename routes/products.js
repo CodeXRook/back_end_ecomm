@@ -55,6 +55,16 @@ productsRouter.delete('/:id', (req, res, next) => {
     })
 });
 
-productsRouter.get('/', req, res, next) =>{
+productsRouter.get('/:type/all', (req, res, next) =>{
     const {type} = req.params;
-}
+
+    ProductsService.getAllProductsOfType(type)
+    .then(data => {
+        res.json(data);
+    })
+    .catch(err => {
+        next(err);
+    })
+});
+
+module.exports = productsRouter;
