@@ -30,9 +30,15 @@ userRouter.get('/:firstname', (req, res, next) =>{
 
     // PUT -- UPDATE
 userRouter.put('/:name',(req, res, next) => {
-    const {state} = req.body;
+    const {address} = req.body;
     const {name} = req.params;
 
-    userService.update(firstname, lastname, state)
+    userService.update(firstname, lastname, address)
+    .then(data => {
+        res.json({success: `Updated user firstname and address ${firstname} ${lastname} ${address}`});
+    })
+    .catch(err => {
+        next(err);
+    })
 })
 
