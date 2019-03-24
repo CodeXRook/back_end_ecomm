@@ -37,5 +37,7 @@ productsRouter.put('/:id', (req, res, next)=> {
     .then(data =>{
         res.json({success: `Updated product name ${name} with product ID: ${trainer}`});
     })
-    
-})
+    .catch(err => {
+        next(err);
+    })
+});
