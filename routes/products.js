@@ -27,3 +27,9 @@ productsRouter.get('/:id/', (req, res, next)=> {
         next(err);
     })
 });
+
+// PUT - UPDATE
+productsRouter.put('/:id', (req, res, next)=> {
+    const {}
+    const {}
+})
