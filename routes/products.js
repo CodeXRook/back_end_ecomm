@@ -3,10 +3,10 @@ const productsRouter = express.Router();
 const ProductRouter = require('../services/products');
 
 // POST - CREATE
-productRouter.post('/', (req, res, next) => {
+productsRouter.post('/', (req, res, next) => {
     const {id, name, shop_id, price, description, category, url} = req.body;
 
-    ProductService.create(id, name, shop_id, price, description, category, url)
+    ProductsService.create(id, name, shop_id, price, description, category, url)
     .then(data => {
         res.json({success: `Created Porduct named ${name} with generated ID: ${data.id}`});
     })
@@ -16,6 +16,11 @@ productRouter.post('/', (req, res, next) => {
 })
 
 // GET - READ
-productRouter.get('/:id/', (req, res, next)=> {
-    
+productsRouter.get('/:id/', (req, res, next)=> {
+    const {id} = req.params;
+
+    ProductsService.read(id)
+    .then(data => {
+        
+    })
 })
