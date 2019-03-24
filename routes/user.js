@@ -45,5 +45,13 @@ userRouter.put('/:name',(req, res, next) => {
 // DELETE- DELETE
 userRouter.delete('/:fistname', (req, res, next) => {
     const {firstname} = req.params;
+
+    userRouter.delete(name)
+    .then(data => {
+        res.json({success: `Deleted trainer name ${firstname}`});
+    })
+    .catch(err => {
+        next(err);
+    })
 })
 
