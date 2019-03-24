@@ -55,3 +55,6 @@ productsRouter.delete('/:id', (req, res, next) => {
     })
 });
 
+productsRouter.get('/', req, res, next) =>{
+    const {type} = req.params;
+}
