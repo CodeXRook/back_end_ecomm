@@ -10,20 +10,22 @@ CREATE TABLE user (
  address VARCHAR NOT NULL,
  state VARCHAR NOT NULL,
  zipcode VARCHAR NOT NULL
+
 );
 
-CREATE TABLE shops(
+CREATE TABLE shops (
 id SERIAL PRIMARY KEY, 
 shopname VARCHAR NOT NULL,
-user_id SERIAL PRIMARY KEY,
+user INT REFERENCES user(id) NOT NULL,
 state VARCHAR NOT NULL,
 city VARCHAR NOT NULL,
 zipcode VARCHAR NOT NULL
+
 );
 
 CREATE TABLE products(
 id SERIAL PRIMARY KEY,
-shop_id SERIAL PRIMARY KEY,
+shop_id INT REFERENCES shop(id) NOT NULL,
 name VARCHAR NOT NULL,
 price MONEY,
 description VARCHAR NOT NULL,
@@ -31,9 +33,10 @@ category VARCHAR NOT NULL,
 url VARCHAR NOT NULL
 );
 
-CREATE TABLE orders(
+CREATE TABLE orders (
 id SERIAL PRIMARY KEY,
-user_id SERIAL PRIMARY KEY,
+user_id INT REFERENCES user(id) NOT NULL,
 order_total VARCHAR NOT NULL,
 order_status VARCHAR NOT NULL
+
 );
