@@ -48,6 +48,10 @@ productsRouter.delete('/:id', (req, res, next) => {
 
     ProductsService.delete(id)
     .then(data => {
-        
+        res.json({ success: `Deleted product with ID: ${id}`});
     })
-})
+    .catch(err =>{
+        next(err);
+    })
+});
+
