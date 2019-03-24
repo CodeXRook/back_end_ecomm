@@ -35,6 +35,7 @@ productsRouter.put('/:id', (req, res, next)=> {
 
     ProductsService.update(id, name, shop_id, price, description, category, url)
     .then(data =>{
-        
+        res.json({success: `Updated product name ${name} with product ID: ${trainer}`});
     })
+    
 })
