@@ -30,6 +30,6 @@ productsRouter.get('/:id/', (req, res, next)=> {
 
 // PUT - UPDATE
 productsRouter.put('/:id', (req, res, next)=> {
-    const {}
+    const {id, name, shop_id, price, description, category, url} = req.body;
     const {}
 })
