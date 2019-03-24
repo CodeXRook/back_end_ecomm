@@ -16,6 +16,7 @@ CREATE TABLE shops (
 id SERIAL PRIMARY KEY, 
 shopname VARCHAR NOT NULL,
 user_id INT REFERENCES users(id) NOT NULL,
+product_id INT REFERENCES products(id) NOT NULL,
 state VARCHAR NOT NULL,
 city VARCHAR NOT NULL,
 zipcode VARCHAR NOT NULL
@@ -42,3 +43,6 @@ INSERT INTO users (firstname, lastname, address, state, zipcode) VALUES
 ('Ash', 'Gary', '146 west st', 'New york', 10472),
 ('Pat', 'Ewin', '55 bowery st', 'New york', 10162),
 ('Mark', 'James', '123 main st', 'Main', 10563);
+
+INSERT INTO shops (shopname, products, address, state, zipcode) VALUES
+('JeanSpace, Jeans, 34 howard st, New york, 10101')
