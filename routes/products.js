@@ -21,6 +21,6 @@ productsRouter.get('/:id/', (req, res, next)=> {
 
     ProductsService.read(id)
     .then(data => {
-        
+        res.json(data);
     })
 })
