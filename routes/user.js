@@ -21,9 +21,11 @@ userRouter.get('/:firstname', (req, res, next) =>{
 
             userService.read(firstname)
             .then(data => {
-                
+                res.json(data);
             })
-
-    })
+            .catch(err => {
+                next(err);
+            })
+    });
 
 
