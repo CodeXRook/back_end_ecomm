@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const port = 5055
 
-
+const userRouter = require('./routes/user');
 
 
 //FORWARD SLASH PING OR ANY TYPE TO ACCESS EXACT LOCAL HOST FILE
