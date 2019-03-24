@@ -43,8 +43,11 @@ productsRouter.put('/:id', (req, res, next)=> {
 });
 
 //DELETE - DELETE
-productRouter.delete('/:id', (req, res, next) => {
+productsRouter.delete('/:id', (req, res, next) => {
     const {id} = req.params;
 
-    
+    ProductsService.delete(id)
+    .then(data => {
+        
+    })
 })
