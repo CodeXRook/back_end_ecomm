@@ -57,7 +57,7 @@ ProductsServices.getALLProductsOfType = (type) => {
     WHERE
     products.
     `;
-    return db.any(sql.{type});
+    return db.any(sql, {type});
 }
 
 module.exports =ProductsService;
