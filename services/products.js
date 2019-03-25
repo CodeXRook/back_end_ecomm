@@ -55,6 +55,9 @@ ProductsServices.getALLProductsOfType = (type) => {
     JOIN id
     ON products.id_id = id.id
     WHERE
-    products.`
+    products.
+    `;
+    return db.any(sql.{type});
 }
 
+module.exports =ProductsService;
