@@ -28,6 +28,13 @@ ProductsServices.update = (id, name, shop_id, price, description, category, url)
     SET
     id_id=$[id_id],
     name=$[name],
-    level=$[level],
-    `
+    shop_id=$[shop_id],
+    price=$[price],
+    description=$[description],
+    category=$[category],
+    url=$[url]
+    WHERE
+     id=$[id]
+    `;
+    return db.none(sql)
 }
