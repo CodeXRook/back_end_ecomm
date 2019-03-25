@@ -45,3 +45,7 @@ ProductsServices.delete = (id) => {
     `;
     return db.none(sql, {id});
 }
+
+ProductsServices.getALLProductsOfType = (type) => {
+    
+}
