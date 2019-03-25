@@ -1,18 +1,18 @@
 const {db} = require ('./dbConnect');
 const UserService ={};
 
-UserService.create = (id, user_id, order_total, order_status) =>{
-    const sql = `INSERT INTO user (id, user_id, order_total, order_status) VALUES ($[id], $[user_id], $[order_total], $[order_status]) RETURNING id`;
-    return db.one(sql, {id, user_id, order_total, order_status});
+UserService.create = (firstname, lastname, address, state, zipcode) =>{
+    const sql = `INSERT INTO user (firstname, lastname, address, state, zipcode) VALUES ($[firstname], $[lastname], $[address], $[state], $[zipcode]) RETURNING id`;
+    return db.one(sql, {firstname, lastname, address, state, zipcode});
 }
 
-UserService.read =(id) => {
+UserService.read =(firstname) => {
     const sql =`
     SELECT 
     user.*,
-      id.id AS id_id
-    FROM user
-    JOIN id
+      .name AS 
+    FROM 
+    JOIN 
       ON user.id_id=id.id
     WHERE 
       user.id = $[id.id]
@@ -20,7 +20,7 @@ UserService.read =(id) => {
     return db.one(sql, {id});
 }
 
-UserService.update = (id, user_id, order_total, order_status) =>{
+UserService.update = (firstname, lastname, address, state, zipcode) =>{
     const sql = `
     UPDATE user
     SET
@@ -28,6 +28,15 @@ UserService.update = (id, user_id, order_total, order_status) =>{
      WHERE
      id=$[id]
      `;
-     return db.none(sql, {id, user_id, order_total, order_status});
+     return db.none(sql, {firstname, lastname, address, state, zipcode});
 }
 
+UserService.getALLUser = (id) =>{
+    const sql =`
+    SELECT
+    u.*
+    p.name AS user_id
+    FROM products u
+    JOIN `
+    
+}
