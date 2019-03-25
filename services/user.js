@@ -20,4 +20,14 @@ UserService.read =(id) => {
     return db.one(sql, {id});
 }
 
-UserService.update = (id, user_id, order_total, order_status)
+UserService.update = (id, user_id, order_total, order_status) =>{
+    const sql = `
+    UPDATE user
+    SET
+     user_id= $[user_id]
+     WHERE
+     id=$[id]
+     `;
+     return db.none(sql, {id, user_id, order_total, order_status});
+}
+
