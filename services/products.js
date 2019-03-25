@@ -26,5 +26,7 @@ ProductsServices.update = (id, name, shop_id, price, description, category, url)
     const sql =`
     UPDATE products
     SET
+    id_id=$[id_id],
+    name=$[name]
     `
 }
