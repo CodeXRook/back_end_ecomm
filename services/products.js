@@ -47,5 +47,14 @@ ProductsServices.delete = (id) => {
 }
 
 ProductsServices.getALLProductsOfType = (type) => {
-    
+    const sql =`
+    SELECT
+    products.*,
+    id.id AS id_id
+    FROM products
+    JOIN id
+    ON products.id_id = id.id
+    WHERE
+    products.`
 }
+
