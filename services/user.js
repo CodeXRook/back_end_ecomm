@@ -8,5 +8,13 @@ UserService.create = (id, user_id, order_total, order_status) =>{
 
 UserService.read =(id) => {
     const sql =`
-    `
+    SELECT 
+    user.*,
+      id.id AS id_id
+    FROM user
+    JOIN id
+      ON user.id_id=id.id
+    WHERE 
+      user.id = $[id.id]
+    `;
 }
