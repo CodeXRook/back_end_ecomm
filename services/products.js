@@ -27,6 +27,7 @@ ProductsServices.update = (id, name, shop_id, price, description, category, url)
     UPDATE products
     SET
     id_id=$[id_id],
-    name=$[name]
+    name=$[name],
+    level=$[level],
     `
 }
