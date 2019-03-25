@@ -15,6 +15,8 @@ app.use(bodyParser.json())
 //ROUTES
 app.use('/user', userRouter);
 app.use('/products', productsRouter);
+app.use('/orders', ordersRouter);
+app.use('/shops.js', shopsRouter);
 
 app.use(( err, req, res, next) => {
     res.status(400).json({error: err.toString()});
