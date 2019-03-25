@@ -43,4 +43,5 @@ ProductsServices.delete = (id) => {
     const sql =`
     DELETE FROM products WHERE id=$[id]
     `;
+    return db.none(sql, {id});
 }
