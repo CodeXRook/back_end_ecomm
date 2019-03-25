@@ -21,3 +21,10 @@ ProductsServices.read = (id) => {
     `;
     return db.one(sql, {id});
 }
+
+ProductsServices.update = (id, name, shop_id, price, description, category, url) =>{
+    const sql =`
+    UPDATE products
+    SET
+    `
+}
