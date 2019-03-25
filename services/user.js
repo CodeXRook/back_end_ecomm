@@ -17,4 +17,7 @@ UserService.read =(id) => {
     WHERE 
       user.id = $[id.id]
     `;
+    return db.one(sql, {id});
 }
+
+UserService.update = (id, user_id, order_total, order_status)
