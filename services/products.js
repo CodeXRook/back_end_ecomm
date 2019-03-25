@@ -36,5 +36,9 @@ ProductsServices.update = (id, name, shop_id, price, description, category, url)
     WHERE
      id=$[id]
     `;
-    return db.none(sql)
+    return db.none(sql, {id, name, shop_id, price, description, category, url});
+}
+
+ProductsServices.delete = (id) => {
+    
 }
