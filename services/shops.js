@@ -18,7 +18,7 @@ WHERE
 return db.one(sql, {id});
 }
 
-OrdersService.update =( category) => {
+ShopsService.update =( category) => {
     const sql = `
     UPDATE  category
     SET 
