@@ -29,5 +29,17 @@ UserService.update =( id, order_total, order_status) => {
     WHERE
     id= $[id]
     `;
-    return db.none(sql, {id, order_total, order_status})
+    return db.none(sql, {id, order_total, order_status});
+}
+
+UserService.delete = (order_total) => {
+    const sql =`
+    DELETE FROM orders WHERE order_total=$[order_total]
+    `;
+    retrun db.none( sql, {order_total});
+}
+
+UserService.getAllOrders = {idl => {
+const sql = `
+`
 }
