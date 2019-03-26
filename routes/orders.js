@@ -46,4 +46,7 @@ const {id} = req.params;
     .then( data =>{
         res.json({success: `Deleted orders with ID: ${id}`});
     })
-})
+    .catch(err => {
+        next(err);
+    })
+});
