@@ -15,6 +15,8 @@ FROM orders
 JOIN id
 ON user. =
 WHERE
- 
-`
+  user.name =[name]
+`;
+return db.one(sql, {id});
 }
+
