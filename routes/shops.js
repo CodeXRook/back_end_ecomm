@@ -44,4 +44,7 @@ ordersRouter.delete('/:user_id',(req, res, next) => {
   .then(data => {
      res.json({success: `Deleted user_id with ID: ${user_id}`});
   })
+  .catch(err => {
+      next(err);
+  })
 })
