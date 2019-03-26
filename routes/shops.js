@@ -36,4 +36,9 @@ ordersRouter.put('/:shopname', (req, res, next) =>{
     })
 });
 
-//
+//DELETE -- DELETE
+ordersRouter.delete('/:user_id',(req, res, next) => {
+ const {user_id} = req.params;
+
+  
+})
