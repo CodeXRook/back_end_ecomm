@@ -23,4 +23,9 @@ shopsRouter.get('/:shopname', (req, res, next) => {
   .then(data => {
       res.json(data);
   })
+});
+
+// PUT -- UPDATE
+ordersRouter.put('/:shopname', (req, res, next) =>{
+    
 })
