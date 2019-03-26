@@ -9,6 +9,12 @@ OrdersService.create =(id, user_id, order_total, order_status) => {
 OrdersService.read = (id) => {
 const sql = `
 SELECT
-order
+orders.*,
+id.
+FROM orders
+JOIN id
+ON user. =
+WHERE
+ 
 `
 }
