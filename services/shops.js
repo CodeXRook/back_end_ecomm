@@ -33,10 +33,10 @@ ShopsService.delete = (category) => {
     const sql =`
     DELETE FROM shops WHERE  category=$[category]
     `;
-    return db.none( sql, {});
+    return db.none( sql, { category});
 }
 
-OrdersService.getAllOrders = () => {
+ShopsService.getAllCategories = (category) => {
   const sql = `
   SELECT
   *
