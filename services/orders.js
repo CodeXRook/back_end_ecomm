@@ -9,11 +9,9 @@ OrdersService.create =(id, user_id, order_total, order_status) => {
 OrdersService.read = (id) => {
 const sql = `
 SELECT
-orders.*,
-id.
+*
+id
 FROM orders
-JOIN id
-ON user. =
 WHERE
   order.name =[name]
 `;
@@ -36,33 +34,27 @@ OrdersService.delete = (order_total) => {
     const sql =`
     DELETE FROM orders WHERE order_total=$[order_total]
     `;
-    retrun db.none( sql, {order_total});
+    return db.none( sql, {order_total});
 }
 
-OrdersService.getAllOrders = (id) => {
+OrdersService.getAllOrders = () => {
   const sql = `
   SELECT
-  o.*,
-  o.name AS order_name
-  FROM orders o
-  JOIN 
-  ON
-  WHERE
+  *
+  FROM orders;
 `;
 return db.any(sql, {id});
 }
 
-OrdersSevice.getStatus =(order_status) => {
+OrdersSevice.getStatus = (user_id) => {
     const sql =`
-    o.*
-    order_staus_name AS order_status
-    FROM orders o
-    JOIN order_status 
-    ON o.id = o.order_status
+    SELECT
+    orders_status 
+    FROM orders 
     WHERE
-    o.name =$ [name] AND o.status >= $[order_status]
+    user_id =$[user_id];
     `;
-    return db.any(sql, {order_status});
+    return db.any(sql, {user_id});
 }
 
 module.exports =OrdersServices;

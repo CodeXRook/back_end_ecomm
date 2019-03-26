@@ -11,13 +11,13 @@ ProductsServices.create = (id, name, shop_id, price, description, category, url)
 ProductsServices.read = (id) => {
     const sql =`
     SELECT
-    products.*
-    id.name AS id_name
-    FROM products
+    *,
+    id.name
+    FROM orders
     JOIN id
-    ON products.id_id = id.id
+    ON user. =
     WHERE
-    products.id =$[id]
+      order.name =[name]
     `;
     return db.one(sql, {id});
 }
