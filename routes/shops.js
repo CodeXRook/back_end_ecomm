@@ -14,3 +14,9 @@ shopsRouter.post('/', (req, rew, next) => {
         next(err);
     })
 });
+
+// GET - READ 
+shopsRouter.get('/:shopname', (req, res, next) => {
+ const {shopname} = req.params;
+
+})
