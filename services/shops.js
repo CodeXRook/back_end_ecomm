@@ -3,10 +3,10 @@ const SHopsService ={};
 
 ShopsService.create =(user_id, shopname, category, address, state, city, zipcode) => {
     const sql = `INSERT INTO orders (user_id, shopname, category, address, state, city, zipcode) VALUES ($[id], $[user_id])`;
-    return db.one(sql, {id, user_id, order_total, order_status});
+    return db.one(sql, {user_id, shopname, category, address, state, city, zipcode});
 }
 
-OrdersService.read = (id) => {
+ShopsService.read = (id) => {
 const sql = `
 SELECT
 *
@@ -18,23 +18,22 @@ WHERE
 return db.one(sql, {id});
 }
 
-OrdersService.update =( id, order_total, order_status) => {
+OrdersService.update =( category) => {
     const sql = `
-    UPDATE orders
+    UPDATE  category
     SET 
-    order_total_id= $[order_total]
-    order_status_id= $[order_status]
+    category= $[ category]
     WHERE
-    id= $[id]
+    category= $[category]
     `;
-    return db.none(sql, {id, order_total, order_status});
+    return db.none(sql, {category});
 }
 
-OrdersService.delete = (order_total) => {
+OrdersService.delete = (category) => {
     const sql =`
     DELETE FROM orders WHERE order_total=$[order_total]
     `;
-    return db.none( sql, {order_total});
+    return db.none( sql, {});
 }
 
 OrdersService.getAllOrders = () => {
@@ -43,10 +42,10 @@ OrdersService.getAllOrders = () => {
   *
   FROM orders;
 `;
-return db.any(sql, {id});
+return db.any(sql, {});
 }
 
-OrdersSevice.getStatus = (user_id) => {
+OrdersSevice.getStatus = () => {
     const sql =`
     SELECT
     orders_status 
@@ -54,7 +53,7 @@ OrdersSevice.getStatus = (user_id) => {
     WHERE
     user_id =$[user_id];
     `;
-    return db.any(sql, {user_id});
+    return db.any(sql, {});
 }
 
 module.exports =OrdersServices;
