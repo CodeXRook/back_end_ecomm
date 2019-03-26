@@ -52,5 +52,10 @@ const {id} = req.params;
 });
 
 ordersRouter.get('/:order_status', (req, res, next) => {
+const {order_status} = req.params;
 
+    OrdersService.getStatus(order_status)
+    .then(data =>{
+        
+    })
 })
