@@ -29,4 +29,12 @@ ordersRouter.get('/:id/', (req, res. next) =>{
 ordersRouter.put('/:id', (req, res, next) =>{
     const {id, user_id, order_total, order_status} = req.body;
     const {id} = req.params;
+
+    OrdersService.update(id, user_id, order_total, order_status)
+    .then(data => {
+        res.json({success: `Updated orders id ${id} with user_id I: ${user_id}`});
+    })
+    .catch(err => {
+        next(err);
+    })
 })
