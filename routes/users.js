@@ -1,12 +1,12 @@
 const express = require('express');
-const userRouter = express.Router();
-const userService = require('../services/user');
+const usersRouter = express.Router();
+const usersService = require('../services/users');
 
 // POST - CREATE
-userRouter.post('/',(req, res, next) =>{
+usersRouter.post('/',(req, res, next) =>{
     const {id, firstname, lastname, address, state, zipcode} = req.body;
 
-    userService.create(id, firstname, lastname, address, state, zipcode)
+    usersService.create(id, firstname, lastname, address, state, zipcode)
     .then(data => {
         res.json({success: `User created ${firstname} ${lastname} ${address} ${state} ${zipcode}`});
     })
@@ -16,10 +16,10 @@ userRouter.post('/',(req, res, next) =>{
 });
 
 // GET - READ
-userRouter.get('/:firstname', (req, res, next) =>{
+usersRouter.get('/:firstname', (req, res, next) =>{
         const {firstname} = req.params;
 
-            userService.read(firstname)
+            usersService.read(firstname)
             .then(data => {
                 res.json(data);
             })
@@ -29,13 +29,13 @@ userRouter.get('/:firstname', (req, res, next) =>{
     });
 
     // PUT -- UPDATE
-userRouter.put('/:name',(req, res, next) => {
+usersRouter.put('/:firstname',(req, res, next) => {
     const {address} = req.body;
-    const {name} = req.params;
+    const {firstname} = req.params;
 
-    userService.update(firstname, lastname, address)
+    usersService.update(firstname, lastname, address)
     .then(data => {
-        res.json({success: `Updated user firstname and address ${firstname} ${lastname} ${address}`});
+        res.json({success: `Updated user firstname and address ${firstname} ${address}`});
     })
     .catch(err => {
         next(err);
@@ -43,10 +43,10 @@ userRouter.put('/:name',(req, res, next) => {
 })
 
 // DELETE- DELETE
-userRouter.delete('/:id', (req, res, next) => {
+usersRouter.delete('/:id', (req, res, next) => {
     const {firstname} = req.params;
 
-    userRouter.delete(name)
+    usesrRouter.delete(firstname)
     .then(data => {
         res.json({success: `Deleted trainer name ${firstname}`});
     })
@@ -55,10 +55,10 @@ userRouter.delete('/:id', (req, res, next) => {
     })
 });
 
-userRouter.get('/:id/orders', (req, res, next) => {
-    const {id} = req.params;
+usersRouter.get('/:firstname', (req, res, next) => {
+    const {firstname} = req.params;
   
     
 })
 
-module.exports = userRouter;
+module.exports = usersRouter;

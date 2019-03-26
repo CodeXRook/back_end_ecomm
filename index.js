@@ -2,7 +2,7 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const app = express();
 
-const userRouter = require('./routes/user');
+const userRouter = require('./routes/users');
 
 
 //MIDDLEWARE NEEDED
