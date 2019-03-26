@@ -19,4 +19,8 @@ shopsRouter.post('/', (req, rew, next) => {
 shopsRouter.get('/:shopname', (req, res, next) => {
  const {shopname} = req.params;
 
+  ShopsServive.read(shopname)
+  .then(data => {
+      res.json(data);
+  })
 })
