@@ -53,7 +53,11 @@ shopsRouter.get('/:type/category', (req, res, next) => {
     const {type} =req.params;
 
     SHopsService.getCategoryOfType(type)
-    .then(data => [
+    .then(data => {
         re.json(data);
-    ])
-})
+    })
+    .catch(err => {
+        next(err);
+    })
+});
+
