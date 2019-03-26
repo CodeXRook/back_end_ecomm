@@ -40,5 +40,8 @@ ordersRouter.put('/:shopname', (req, res, next) =>{
 ordersRouter.delete('/:user_id',(req, res, next) => {
  const {user_id} = req.params;
 
-  
+  ShopsService.delete(user_id)
+  .then(data => {
+     res.json({success: `Deleted user_id with ID: ${user_id}`});
+  })
 })
