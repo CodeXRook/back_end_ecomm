@@ -50,3 +50,7 @@ const {id} = req.params;
         next(err);
     })
 });
+
+ordersRouter.get('/:order_status', (req, res, next) => {
+
+})
