@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/CodeXRook/back_end_ecomm#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "pg-promise": "^8.6.4"
   }
 }

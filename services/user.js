@@ -9,15 +9,12 @@ UserService.create = (firstname, lastname, address, state, zipcode) =>{
 UserService.read =(firstname) => {
     const sql =`
     SELECT 
-    user.*,
-      .name AS 
-    FROM 
-    JOIN 
-      ON user.id_id=id.id
+    *
+    FROM users
     WHERE 
-      user.id = $[id.id]
+      firstname= $[firstname]
     `;
-    return db.one(sql, {id});
+    return db.one(sql, {firstname});
 }
 
 UserService.update = (firstname) =>{

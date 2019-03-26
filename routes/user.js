@@ -1,6 +1,6 @@
 const express = require('express');
 const userRouter = express.Router();
-const userService = require('../service/user');
+const userService = require('../services/user');
 
 // POST - CREATE
 userRouter.post('/',(req, res, next) =>{
