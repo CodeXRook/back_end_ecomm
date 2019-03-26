@@ -31,4 +31,9 @@ ordersRouter.put('/:shopname', (req, res, next) =>{
     const {shopname} = req.params;
 
     OrdersService.updated(user_id, shopname, category, address, state, city, zipcode)
-})
+    .then(data =>{
+        res.json({success: `Updated shopsname ${shopsname} with user_id ID: ${user_id}`});
+    })
+});
+
+//
