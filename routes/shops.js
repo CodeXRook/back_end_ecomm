@@ -8,6 +8,6 @@ shopsRouter.post('/', (req, rew, next) => {
 
     ShopsService.create(user_id, shopname, category, address, state, city, zipcode)
     .then(data => {
-        
+        res.json({success: `Created shopename ${shopname} with generated ID: ${data.id}`});
     })
 })
