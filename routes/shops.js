@@ -27,5 +27,8 @@ shopsRouter.get('/:shopname', (req, res, next) => {
 
 // PUT -- UPDATE
 ordersRouter.put('/:shopname', (req, res, next) =>{
-    
+    const {user_id, shopname, category, address, state, city, zipcode} = req.body;
+    const {shopname} = req.params;
+
+    OrdersService.updated(user_id, shopname, category, address, state, city, zipcode)
 })
