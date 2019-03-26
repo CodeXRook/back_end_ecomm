@@ -2,7 +2,7 @@ const express = require('express');
 const OrdersRouter = express.Router();
 const OrdersService = require('../service/orders');
 
-//POST- CREATE
+//POST -- CREATE
 OrdersRouter.post('/',(req, res, next) => {
    const {id, user_id, order_total, order_status} = res.body;
 
@@ -15,7 +15,7 @@ OrdersRouter.post('/',(req, res, next) => {
    })
 });
 
-//GET PAID
+//GET -- READ
 ordersRouter.get('/:id/', (req, res. next) =>{
     const {id} = req.param;
 
@@ -23,4 +23,10 @@ ordersRouter.get('/:id/', (req, res. next) =>{
     .then(data => {
         res.json(data);
     })
+});
+
+//PUT -- UPDATE
+ordersRouter.put('/:id', (req, res, next) =>{
+    const {id, user_id, order_total, order_status} = req.body;
+    const {id} = req.params;
 })
