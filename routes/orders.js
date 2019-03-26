@@ -56,6 +56,6 @@ const {order_status} = req.params;
 
     OrdersService.getStatus(order_status)
     .then(data =>{
-        
+        res.json(data);
     })
 })
