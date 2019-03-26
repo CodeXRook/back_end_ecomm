@@ -20,7 +20,7 @@ UserService.read =(firstname) => {
     return db.one(sql, {id});
 }
 
-UserService.update = (firstname, lastname, address, state, zipcode) =>{
+UserService.update = (firstname) =>{
     const sql = `
     UPDATE user
     SET
@@ -31,12 +31,38 @@ UserService.update = (firstname, lastname, address, state, zipcode) =>{
      return db.none(sql, {firstname, lastname, address, state, zipcode});
 }
 
-UserService.getALLUser = (id) =>{
+UserService.delete = (firstname) => {
+    const sql = `
+    DELETE FROM user WHERE firstname=$[firstname]
+    `;
+    return db.none(sql, {firstname});
+  }
+  
+
+UserService.getALLUser = (firstname) =>{
     const sql =`
     SELECT
     u.*
     p.name AS user_id
     FROM products u
-    JOIN `
-    
+    JOIN 
+    ON
+    WHERE
+    `;
+    return db.any(sql, {name});
 }
+
+UserService.getAddressUser = (firstname, address) => {
+    const sql = `
+    SELECT
+       u.*,
+       f.name AS firstname_name
+    JOIN user u
+     ON f.id = u.firstname_id
+     WHERE
+     f.name =$[name] AND u.address >= $[address]
+     `;
+     return db.any(sql, {firstname, address});
+}
+
+module.exports = UserService;
