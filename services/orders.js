@@ -20,7 +20,7 @@ WHERE
 return db.one(sql, {id});
 }
 
-UserService.update =( id, order_total, order_status) => {
+OrdersService.update =( id, order_total, order_status) => {
     const sql = `
     UPDATE orders
     SET 
@@ -32,14 +32,17 @@ UserService.update =( id, order_total, order_status) => {
     return db.none(sql, {id, order_total, order_status});
 }
 
-UserService.delete = (order_total) => {
+OrdersService.delete = (order_total) => {
     const sql =`
     DELETE FROM orders WHERE order_total=$[order_total]
     `;
     retrun db.none( sql, {order_total});
 }
 
-UserService.getAllOrders = {idl => {
-const sql = `
+OrdersService.getAllOrders = {idl => {
+  const sql = `
+  SELECT
+  o.*,
+  
 `
 }
