@@ -45,7 +45,7 @@ ShopsService.getAllShops = (shopname) => {
 return db.any(sql, {user_id});
 }
 
-ShopsSevice.getStatus = ( ) => {
+ShopsSevice.getShopType = (category ) => {
     const sql =`
     SELECT
     orders_status 
@@ -53,7 +53,7 @@ ShopsSevice.getStatus = ( ) => {
     WHERE
     user_id =$[user_id];
     `;
-    return db.any(sql, {});
+    return db.any(sql, {category});
 }
 
 module.exports =ShopsServices;
