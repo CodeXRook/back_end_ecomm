@@ -29,9 +29,9 @@ ShopsService.update =( category) => {
     return db.none(sql, {category});
 }
 
-OrdersService.delete = (category) => {
+ShopsService.delete = (category) => {
     const sql =`
-    DELETE FROM orders WHERE order_total=$[order_total]
+    DELETE FROM shops WHERE  category=$[category]
     `;
     return db.none( sql, {});
 }
