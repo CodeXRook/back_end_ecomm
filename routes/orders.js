@@ -16,7 +16,7 @@ OrdersRouter.post('/',(req, res, next) => {
 });
 
 //GET -- READ
-ordersRouter.get('/:id/', (req, res. next) =>{
+ordersRouter.get('/:id/', (req, res, next) =>{
     const {id} = req.param;
 
     OrdersService.read(id)
