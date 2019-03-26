@@ -37,4 +37,13 @@ ordersRouter.put('/:id', (req, res, next) =>{
     .catch(err => {
         next(err);
     })
+});
+
+// DELETE -- DELETE
+ordersRouter.delete('/:id', (req, res, next) => {
+const {id} = req.params;
+    OdersService.delete(id)
+    .then( data =>{
+        res.json({success: `Deleted orders with ID: ${id}`});
+    })
 })
