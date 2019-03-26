@@ -39,10 +39,30 @@ OrdersService.delete = (order_total) => {
     retrun db.none( sql, {order_total});
 }
 
-OrdersService.getAllOrders = {idl => {
+OrdersService.getAllOrders = (id) => {
   const sql = `
   SELECT
   o.*,
-  
-`
+  o.name AS order_name
+  FROM orders o
+  JOIN 
+  ON
+  WHERE
+`;
+return db.any(sql, {id});
 }
+
+OrdersSevice.getStatus =(order_status) => {
+    const sql =`
+    o.*
+    order_staus_name AS order_status
+    FROM orders o
+    JOIN order_status 
+    ON o.id = o.order_status
+    WHERE
+    o.name =$ [name] AND o.status >= $[order_status]
+    `;
+    return db.any(sql, {order_status});
+}
+
+module.exports =OrdersServices;
