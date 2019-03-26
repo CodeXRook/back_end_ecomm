@@ -58,4 +58,6 @@ const {order_status} = req.params;
     .then(data =>{
         res.json(data);
     })
-})
+});
+
+module.exports = ordersRouter;
