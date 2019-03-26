@@ -15,8 +15,19 @@ FROM orders
 JOIN id
 ON user. =
 WHERE
-  user.name =[name]
+  order.name =[name]
 `;
 return db.one(sql, {id});
 }
 
+UserService.update =( id, order_total, order_status) => {
+    const sql = `
+    UPDATE orders
+    SET 
+    order_total_id= $[order_total]
+    order_status_id= $[order_status]
+    WHERE
+    id= $[id]
+    `;
+    return db.none(sql, {id, order_total, order_status})
+}
