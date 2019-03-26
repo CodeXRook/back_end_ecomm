@@ -49,6 +49,8 @@ ordersRouter.delete('/:user_id',(req, res, next) => {
   })
 });
 
-shopsRouter.get('/:category', (req, res, next) => {
-    const {category} =req.params;
+shopsRouter.get('/:type/category', (req, res, next) => {
+    const {type} =req.params;
+
+    SHopsService.getCategoryOfType(type)
 })
