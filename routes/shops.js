@@ -10,4 +10,7 @@ shopsRouter.post('/', (req, rew, next) => {
     .then(data => {
         res.json({success: `Created shopename ${shopname} with generated ID: ${data.id}`});
     })
-})
+    .catch(err => {
+        next(err);
+    })
+});
