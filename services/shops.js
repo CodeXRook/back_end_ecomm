@@ -36,16 +36,16 @@ ShopsService.delete = (category) => {
     return db.none( sql, { category});
 }
 
-ShopsService.getAllCategories = (category) => {
+ShopsService.getAllShops = (shopname) => {
   const sql = `
   SELECT
   *
-  FROM orders;
+  FROM shops;
 `;
-return db.any(sql, {});
+return db.any(sql, {user_id});
 }
 
-OrdersSevice.getStatus = () => {
+ShopsSevice.getStatus = ( ) => {
     const sql =`
     SELECT
     orders_status 
@@ -56,4 +56,4 @@ OrdersSevice.getStatus = () => {
     return db.any(sql, {});
 }
 
-module.exports =OrdersServices;
+module.exports =ShopsServices;
