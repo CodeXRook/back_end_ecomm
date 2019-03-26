@@ -61,3 +61,4 @@ shopsRouter.get('/:type/category', (req, res, next) => {
     })
 });
 
+module.exports = shopsRouter;
