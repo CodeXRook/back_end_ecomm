@@ -1,6 +1,7 @@
 const {db} = require('./dbConnect');
 const OrdersService ={};
 
+//THIS IS HOW YOU SERVICES
 OrdersService.create =(id, user_id, order_total, order_status) => {
     const sql = `INSERT INTO orders (id, user_id, order_total, order_status) VALUES ($[id], $[user_id])`;
     return db.one(sql, {id, user_id, order_total, order_status});
