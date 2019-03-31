@@ -1,5 +1,5 @@
 const {db} = require('./dbConnect');
-const SHopsService ={};
+const ShopsService ={};
 
 ShopsService.create =(user_id, shopname, category, address, state, city, zipcode) => {
     const sql = `INSERT INTO orders (user_id, shopname, category, address, state, city, zipcode) VALUES ($[id], $[user_id])`;

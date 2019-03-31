@@ -1,7 +1,5 @@
 const bodyParser = require('body-parser'); //MIDDLEWARE
-
 const express = require('express');
-
 const app = express();
 
 const userRouter = require('./routes/users');
@@ -17,7 +15,8 @@ app.use(bodyParser.json())
 app.use('/user', userRouter);
 app.use('/products', productsRouter);
 app.use('/orders', ordersRouter);
-app.use('/shops.js', shopsRouter);
+app.use('/shops', shopsRouter);
+app.use('/home',homeRouter);
 
 app.use(( err, req, res, next) => {
     res.status(400).json({error: err.toString()});

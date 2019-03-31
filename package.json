@@ -19,6 +19,7 @@
   "homepage": "https://github.com/CodeXRook/back_end_ecomm#readme",
   "dependencies": {
     "express": "^4.16.4",
+    "heroku": "^7.22.7",
     "pg-promise": "^8.6.4"
   }
 }

@@ -40,6 +40,12 @@ order_total VARCHAR NOT NULL,
 order_status VARCHAR NOT NULL
 );
 
+CREATE TABLE home (
+    id SERIAL PRIMARY KEY,
+    light VARCHAR NOT NULL,
+    hair VARCHAR NOT NULL
+);
+
 INSERT INTO users (firstname, lastname, address, state, zipcode) VALUES
 ('Ash', 'Gary', '146 west st', 'New york', '10472'),
 ('Pat', 'Ewin', '55 bowery st', 'New york', '10162'),
@@ -59,3 +65,6 @@ INSERT INTO orders (id, user_id, order_total, order_status) VALUES
 (01, 1, 5, 'pending'),
 (08, 3, 34, 'delivered'),
 (05, 2, 5, 'in tranist');
+
+INSERT INTO home (user_id, light, hair) VALUES
+(12, 'red', 'weave');
